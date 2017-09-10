@@ -16,6 +16,7 @@
 <meta property="og:url" content="https://cczeng.github.io/2017/05/08/JavaScript/pokerGame/JS扑克牌小游戏-一/index.html">
 <meta property="og:site_name" content="曾亮的博客 | 诗和远方">
 <meta property="og:description" content="一、前言今天上课的时候刚好老师布置了用js来做一个扑克牌的小游戏，起初老师只要求我们做一个简单的随机几张扑克牌做出翻牌效果。但是怎么能甘于做一个这么简单的呢，所以我在老师的要求之上给自己再加了一些要求：">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cczeng.github.io/img/pokerGame/yanshi.gif">
 <meta property="og:updated_time" content="2017-05-09T09:19:51.000Z">
 <meta name="twitter:card" content="summary">
@@ -208,7 +209,7 @@
 <h1 id="三、编写代码"><a href="#三、编写代码" class="headerlink" title="三、编写代码"></a>三、编写代码</h1><h2 id="1-nbsp-nbsp-网页布局"><a href="#1-nbsp-nbsp-网页布局" class="headerlink" title="1)&nbsp;&nbsp;网页布局"></a>1)&nbsp;&nbsp;网页布局</h2><p>在html文件body里加入:   </p>
 <pre><code><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">请输入要洗牌的个数.</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"value"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>发牌<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>翻起全部<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>盖起全部<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"poker"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 </code></pre><p>这里的div是用来存放扑克牌的。至于扑克牌素材请自行百度下载。   </p>
-<h2 id="3-nbsp-nbsp-CSS代码"><a href="#3-nbsp-nbsp-CSS代码" class="headerlink" title="3)&nbsp;&nbsp;CSS代码"></a>3)&nbsp;&nbsp;CSS代码</h2><p>这里考虑到是多张图，我们就使用类的方法来添加样式。<br>其中固定了每一张图的长宽，设置了浮动和外边距，还设置了动画时间(翻牌效果)。<br>当把.brandBack类添加给图片的时候就能看到图片翻转的效果了。<br>    <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">	.brand &#123;</div><div class="line">		width: 105px;</div><div class="line">		height: 150px;</div><div class="line">		float: left;</div><div class="line">		margin-right: 10px;</div><div class="line">		margin-top: 20px;</div><div class="line">		transition: all 0.8s;</div><div class="line">	&#125;</div><div class="line">	.brandBack&#123;</div><div class="line">		transform: rotateY(360deg);</div><div class="line">		transition:all 0.8s;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="3-nbsp-nbsp-CSS代码"><a href="#3-nbsp-nbsp-CSS代码" class="headerlink" title="3)&nbsp;&nbsp;CSS代码"></a>3)&nbsp;&nbsp;CSS代码</h2><p>这里考虑到是多张图，我们就使用类的方法来添加样式。<br>其中固定了每一张图的长宽，设置了浮动和外边距，还设置了动画时间(翻牌效果)。<br>当把.brandBack类添加给图片的时候就能看到图片翻转的效果了。<br>    <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">style</span>&gt;</div><div class="line">	<span class="selector-class">.brand</span> &#123;</div><div class="line">		<span class="attribute">width</span>: <span class="number">105px</span>;</div><div class="line">		<span class="attribute">height</span>: <span class="number">150px</span>;</div><div class="line">		<span class="attribute">float</span>: left;</div><div class="line">		<span class="attribute">margin-right</span>: <span class="number">10px</span>;</div><div class="line">		<span class="attribute">margin-top</span>: <span class="number">20px</span>;</div><div class="line">		<span class="attribute">transition</span>: all <span class="number">0.8s</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="selector-class">.brandBack</span>&#123;</div><div class="line">		<span class="attribute">transform</span>: <span class="built_in">rotateY</span>(360deg);</div><div class="line">		<span class="attribute">transition</span>:all <span class="number">0.8s</span>;</div><div class="line">	&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="3-nbsp-nbsp-JavaScript代码"><a href="#3-nbsp-nbsp-JavaScript代码" class="headerlink" title="3)&nbsp;&nbsp;JavaScript代码"></a>3)&nbsp;&nbsp;JavaScript代码</h2><p><strong>首先我们有大量的图片,这些图片的路径我们用一个数组来存储(考虑过用对象后来觉得太麻烦)，我们还要用一个数组来存放每一张图片对应的牌面值</strong><br>    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//存放牌面值的数组  </span></div><div class="line"><span class="keyword">var</span> chars = [<span class="string">'A'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>,<span class="string">'7'</span>,<span class="string">'8'</span>,<span class="string">'9'</span>,<span class="string">'10'</span>,<span class="string">'J'</span>,<span class="string">'Q'</span>,<span class="string">'K'</span>];</div><div class="line"><span class="comment">//每一张牌的路径,brands下标对应A-K(13张)</span></div><div class="line"><span class="keyword">var</span> brands = [<span class="string">"img/14.jpg"</span>,<span class="string">"img/15.jpg"</span>,<span class="string">"img/16.jpg"</span>,<span class="string">"img/4.jpg"</span>,<span class="string">"img/5.jpg"</span>,<span class="string">"img/6.jpg"</span>,<span class="string">"img/7.jpg"</span>,<span class="string">"img/21.jpg"</span>,<span class="string">"img/35.jpg"</span>,<span class="string">"img/49.jpg"</span>,<span class="string">"img/11.jpg"</span>,<span class="string">"img/12.jpg"</span>,<span class="string">"img/13.jpg"</span>];</div></pre></td></tr></table></figure></p>
 <p>上面均是全局数组，不需要放在任何function函数中   </p>
 <p><strong>有了牌面值、每一张牌的路径,那么我们是不是还缺一个牌的背面呢？</strong>   </p>
@@ -259,7 +260,7 @@ var imgSrc = brands[num-1];
 </code></pre><p>这样就把创建的牌插入到HTML元素中了，但是我们能不能改进一下呢？比如可以指定创建多少个，我们只需要一个参数和一个循环就可以搞定了。创建牌的函数最终样子就是这样了:   </p>
 <pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//创建牌</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createBrand</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i&lt; n;i++)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</div><div class="line">		<span class="keyword">var</span> num = generateMixed();</div><div class="line">		<span class="keyword">var</span> imgSrc = brands[num<span class="number">-1</span>];</div><div class="line">		img.setAttribute(<span class="string">'src'</span>,back);</div><div class="line">		img.setAttribute(<span class="string">'alt'</span>,<span class="string">'扑克'</span>);</div><div class="line">		img.setAttribute(<span class="string">'index'</span>,imgSrc);</div><div class="line">		img.setAttribute(<span class="string">'class'</span>,<span class="string">'brand'</span>);</div><div class="line">		img.setAttribute(<span class="string">'row'</span>,chars[num<span class="number">-1</span>]);</div><div class="line">		img.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			flop(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">		img.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			flopBack(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">		img.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			turn(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">		poker.appendChild(img);</div><div class="line">	&#125;</div><div class="line">&#125;   </div><div class="line"><span class="comment">//开牌</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">flop</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">	element.setAttribute(<span class="string">'class'</span>,<span class="string">'brand brandBack'</span>);</div><div class="line">	element.setAttribute(<span class="string">'src'</span>,element.getAttribute(<span class="string">'index'</span>));</div><div class="line">&#125;</div><div class="line"><span class="comment">//盖牌</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">flopBack</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">	element.setAttribute(<span class="string">'class'</span>,<span class="string">'brand'</span>);</div><div class="line">	element.setAttribute(<span class="string">'src'</span>,back);</div><div class="line">&#125;</div><div class="line"><span class="comment">//点击开拍</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">turn</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">	element.setAttribute(<span class="string">'class'</span>,<span class="string">'brand brandBack'</span>);</div><div class="line">	element.setAttribute(<span class="string">'src'</span>,element.getAttribute(<span class="string">'index'</span>));</div><div class="line">	element.onmouseout = <span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><h3 id="在什么时候创建？"><a href="#在什么时候创建？" class="headerlink" title="在什么时候创建？"></a>在什么时候创建？</h3><p>在这之前的步骤都还没有执行，那么我们需要在什么时候添加进网页内容中呢？还记得最早在html代码中的那几个按钮和一个文本输入框吗？对，就是让用户输入一个数然后点击发牌你的牌才发出来。<br>那么我们应该先获得到输入框的值然后再创建：   </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置要生成牌的张数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params"></span>)</span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">var</span> value = <span class="built_in">document</span>.getElementById(<span class="string">'value'</span>);</div><div class="line">	createBrand(value.value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//设置要生成牌的张数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">var</span> value = <span class="built_in">document</span>.getElementById(<span class="string">'value'</span>);</div><div class="line">	createBrand(value.value);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这时候创建牌函数的触发条件就有了，那就是“发牌”按钮。如果没有这个触发，那就网页上永远都不会出现牌，因为你没有任何事件触发它。<br><strong>对了，我们好像还忘了点什么，我们不是有翻起全部牌和盖上全部牌吗？</strong><br>这个和之前翻牌和盖牌没有很大差距，唯一的差别就是你需要用一个循环来遍历所有的img。   </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//翻起全部牌</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">openAllCards</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> brandsList = poker.getElementsByTagName(<span class="string">'img'</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;brandsList.length;i++)</div><div class="line">	&#123;</div><div class="line">		brandsList[i].setAttribute(<span class="string">'class'</span>,<span class="string">'brand brandBack'</span>);</div><div class="line">		brandsList[i].setAttribute(<span class="string">'src'</span>,brandsList[i].getAttribute(<span class="string">'index'</span>));</div><div class="line">		brandsList[i].onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			flopBack(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>盖牌也是一样:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//盖起全部牌</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">closeAllCards</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> brandsList = poker.getElementsByTagName(<span class="string">'img'</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;brandsList.length;i++)</div><div class="line">	&#123;</div><div class="line">		brandsList[i].setAttribute(<span class="string">'class'</span>,<span class="string">'brand'</span>);</div><div class="line">		brandsList[i].setAttribute(<span class="string">'src'</span>,back);</div><div class="line">		brandsList[i].onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			flopBack(<span class="keyword">this</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -272,20 +273,20 @@ var imgSrc = brands[num-1];
 <span class="tag">&lt;<span class="name">head</span>&gt;</span>
     <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>
     <span class="tag">&lt;<span class="name">title</span>&gt;</span>发牌游戏<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
-    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">
-        .brand {
-            width: 105px;
-            height: 150px;
-            float: left;
-            margin-right: 10px;
-            margin-top: 20px;
-            transition: all 0.8s;
-        }
-        .brandBack{
-            transform: rotateY(360deg);
-            transition:all 0.8s;
-        }
-    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span>
+<span class="css">        <span class="selector-class">.brand</span> {</span>
+<span class="undefined">            width: 105px;</span>
+<span class="undefined">            height: 150px;</span>
+<span class="undefined">            float: left;</span>
+<span class="undefined">            margin-right: 10px;</span>
+<span class="undefined">            margin-top: 20px;</span>
+<span class="css">            <span class="selector-tag">transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.8s</span>;</span>
+<span class="undefined">        }</span>
+<span class="css">        <span class="selector-class">.brandBack</span>{</span>
+<span class="undefined">            transform: rotateY(360deg);</span>
+<span class="css">            <span class="selector-tag">transition</span><span class="selector-pseudo">:all</span> 0<span class="selector-class">.8s</span>;</span>
+<span class="undefined">        }</span>
+<span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">head</span>&gt;</span>
 <span class="tag">&lt;<span class="name">body</span>&gt;</span>
     请输入要洗牌的个数.<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"value"</span>&gt;</span>
@@ -297,89 +298,89 @@ var imgSrc = brands[num-1];
     <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
 
 
-    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">
-        var chars = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
-        //每一张牌的路径,brands下标对应A-K(13张)
-        var brands = ["img/14.jpg","img/15.jpg","img/16.jpg","img/4.jpg","img/5.jpg","img/6.jpg","img/7.jpg","img/21.jpg","img/35.jpg","img/49.jpg","img/11.jpg","img/12.jpg","img/13.jpg"];
-        //牌的背面
-        var back = "img/back.jpg";
-        var poker = document.getElementById('poker');
-
-        function generateMixed() {
-             var id = Math.ceil(Math.random()*13);
-             return id;
-        }
-        //创建牌
-        function createBrand(n) {
-            for(var i =0; i&lt; n;i++)
-            {
-                var img = document.createElement('img');
-                var num = generateMixed();
-                var imgSrc = brands[num-1];
-                img.setAttribute('src',back);
-                img.setAttribute('alt','扑克');
-                img.setAttribute('index',imgSrc);
-                img.setAttribute('class','brand');
-                img.setAttribute('row',chars[num-1]);
-                img.onmouseover = function(){
-                    flop(this);
-                }
-                img.onmouseout = function(){
-                    flopBack(this);
-                }
-                img.onclick = function(){
-                    turn(this);
-                }
-                poker.appendChild(img);
-            }
-        }
-        //设置要生成牌的张数
-        function getValue()
-        {
-            var value = document.getElementById('value');
-            createBrand(value.value);
-        }
-        //开牌
-        function flop(element) {
-            element.setAttribute('class','brand brandBack');
-            element.setAttribute('src',element.getAttribute('index'));
-        }
-        //盖牌
-        function flopBack(element) {
-            element.setAttribute('class','brand');
-            element.setAttribute('src',back);
-        }
-        //点击开牌
-        function turn(element) {
-            element.setAttribute('class','brand brandBack');
-            element.setAttribute('src',element.getAttribute('index'));
-            element.onmouseout = null;
-        }
-        //翻起全部牌
-        function openAllCards() {
-            var brandsList = poker.getElementsByTagName('img');
-            for(var i=0;i&lt;brandsList.length;i++)
-            {
-                brandsList[i].setAttribute('class','brand brandBack');
-                brandsList[i].setAttribute('src',brandsList[i].getAttribute('index'));
-                brandsList[i].onmouseout = function(){
-                    flopBack(this);
-                }
-            }
-        }
-        //盖起全部牌
-        function closeAllCards(){
-            var brandsList = poker.getElementsByTagName('img');
-            for(var i=0;i&lt;brandsList.length;i++)
-            {
-                brandsList[i].setAttribute('class','brand');
-                brandsList[i].setAttribute('src',back);
-                brandsList[i].onmouseout = function(){
-                    flopBack(this);
-                }
-            }
-        }
-    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span>
+<span class="javascript">        <span class="keyword">var</span> chars = [<span class="string">'A'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>,<span class="string">'7'</span>,<span class="string">'8'</span>,<span class="string">'9'</span>,<span class="string">'10'</span>,<span class="string">'J'</span>,<span class="string">'Q'</span>,<span class="string">'K'</span>];</span>
+<span class="javascript">        <span class="comment">//每一张牌的路径,brands下标对应A-K(13张)</span></span>
+<span class="javascript">        <span class="keyword">var</span> brands = [<span class="string">"img/14.jpg"</span>,<span class="string">"img/15.jpg"</span>,<span class="string">"img/16.jpg"</span>,<span class="string">"img/4.jpg"</span>,<span class="string">"img/5.jpg"</span>,<span class="string">"img/6.jpg"</span>,<span class="string">"img/7.jpg"</span>,<span class="string">"img/21.jpg"</span>,<span class="string">"img/35.jpg"</span>,<span class="string">"img/49.jpg"</span>,<span class="string">"img/11.jpg"</span>,<span class="string">"img/12.jpg"</span>,<span class="string">"img/13.jpg"</span>];</span>
+<span class="javascript">        <span class="comment">//牌的背面</span></span>
+<span class="javascript">        <span class="keyword">var</span> back = <span class="string">"img/back.jpg"</span>;</span>
+<span class="javascript">        <span class="keyword">var</span> poker = <span class="built_in">document</span>.getElementById(<span class="string">'poker'</span>);</span>
+<span class="undefined"></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">generateMixed</span>(<span class="params"></span>) </span>{</span>
+<span class="javascript">             <span class="keyword">var</span> id = <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">13</span>);</span>
+<span class="javascript">             <span class="keyword">return</span> id;</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//创建牌</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">createBrand</span>(<span class="params">n</span>) </span>{</span>
+<span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i&lt; n;i++)</span>
+<span class="undefined">            {</span>
+<span class="javascript">                <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span>
+<span class="javascript">                <span class="keyword">var</span> num = generateMixed();</span>
+<span class="javascript">                <span class="keyword">var</span> imgSrc = brands[num<span class="number">-1</span>];</span>
+<span class="javascript">                img.setAttribute(<span class="string">'src'</span>,back);</span>
+<span class="javascript">                img.setAttribute(<span class="string">'alt'</span>,<span class="string">'扑克'</span>);</span>
+<span class="javascript">                img.setAttribute(<span class="string">'index'</span>,imgSrc);</span>
+<span class="javascript">                img.setAttribute(<span class="string">'class'</span>,<span class="string">'brand'</span>);</span>
+<span class="javascript">                img.setAttribute(<span class="string">'row'</span>,chars[num<span class="number">-1</span>]);</span>
+<span class="javascript">                img.onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span>
+<span class="javascript">                    flop(<span class="keyword">this</span>);</span>
+<span class="undefined">                }</span>
+<span class="javascript">                img.onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span>
+<span class="javascript">                    flopBack(<span class="keyword">this</span>);</span>
+<span class="undefined">                }</span>
+<span class="javascript">                img.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span>
+<span class="javascript">                    turn(<span class="keyword">this</span>);</span>
+<span class="undefined">                }</span>
+<span class="undefined">                poker.appendChild(img);</span>
+<span class="undefined">            }</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//设置要生成牌的张数</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params"></span>)</span></span>
+<span class="undefined">        {</span>
+<span class="javascript">            <span class="keyword">var</span> value = <span class="built_in">document</span>.getElementById(<span class="string">'value'</span>);</span>
+<span class="undefined">            createBrand(value.value);</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//开牌</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">flop</span>(<span class="params">element</span>) </span>{</span>
+<span class="javascript">            element.setAttribute(<span class="string">'class'</span>,<span class="string">'brand brandBack'</span>);</span>
+<span class="javascript">            element.setAttribute(<span class="string">'src'</span>,element.getAttribute(<span class="string">'index'</span>));</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//盖牌</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">flopBack</span>(<span class="params">element</span>) </span>{</span>
+<span class="javascript">            element.setAttribute(<span class="string">'class'</span>,<span class="string">'brand'</span>);</span>
+<span class="javascript">            element.setAttribute(<span class="string">'src'</span>,back);</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//点击开牌</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">turn</span>(<span class="params">element</span>) </span>{</span>
+<span class="javascript">            element.setAttribute(<span class="string">'class'</span>,<span class="string">'brand brandBack'</span>);</span>
+<span class="javascript">            element.setAttribute(<span class="string">'src'</span>,element.getAttribute(<span class="string">'index'</span>));</span>
+<span class="javascript">            element.onmouseout = <span class="literal">null</span>;</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//翻起全部牌</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">openAllCards</span>(<span class="params"></span>) </span>{</span>
+<span class="javascript">            <span class="keyword">var</span> brandsList = poker.getElementsByTagName(<span class="string">'img'</span>);</span>
+<span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;brandsList.length;i++)</span>
+<span class="undefined">            {</span>
+<span class="javascript">                brandsList[i].setAttribute(<span class="string">'class'</span>,<span class="string">'brand brandBack'</span>);</span>
+<span class="javascript">                brandsList[i].setAttribute(<span class="string">'src'</span>,brandsList[i].getAttribute(<span class="string">'index'</span>));</span>
+<span class="javascript">                brandsList[i].onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span>
+<span class="javascript">                    flopBack(<span class="keyword">this</span>);</span>
+<span class="undefined">                }</span>
+<span class="undefined">            }</span>
+<span class="undefined">        }</span>
+<span class="javascript">        <span class="comment">//盖起全部牌</span></span>
+<span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">closeAllCards</span>(<span class="params"></span>)</span>{</span>
+<span class="javascript">            <span class="keyword">var</span> brandsList = poker.getElementsByTagName(<span class="string">'img'</span>);</span>
+<span class="javascript">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;brandsList.length;i++)</span>
+<span class="undefined">            {</span>
+<span class="javascript">                brandsList[i].setAttribute(<span class="string">'class'</span>,<span class="string">'brand'</span>);</span>
+<span class="javascript">                brandsList[i].setAttribute(<span class="string">'src'</span>,back);</span>
+<span class="javascript">                brandsList[i].onmouseout = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span>
+<span class="javascript">                    flopBack(<span class="keyword">this</span>);</span>
+<span class="undefined">                }</span>
+<span class="undefined">            }</span>
+<span class="undefined">        }</span>
+<span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">body</span>&gt;</span>
 <span class="tag">&lt;/<span class="name">html</span>&gt;</span>
 </code></pre>
