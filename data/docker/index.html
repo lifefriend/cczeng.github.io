@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>杂记</title>
+  <title>publish spring-boot-web use docker</title>
   <link rel="icon" href="/favicon.png">
   <link rel="dns-prefetch" href="https://lifefriend.github.io">
   <link rel="stylesheet" type="text/css" href="/./main.b3331d.css">
 </head>
+
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -30,14 +32,14 @@
           <nav class="header-menu">
             <ul>
               <li>
-                <a href="/">主页</a>
+                <a href="/">Home</a>
               </li>
             </ul>
           </nav>
           <nav class="header-smart-menu">
-            <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-            <a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-            <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+            <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">Blog</a>
+            <a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">Link</a>
+            <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">Me</a>
           </nav>
           <nav class="header-nav">
             <div class="social">
@@ -80,7 +82,7 @@
             <nav class="header-menu js-header-menu">
               <ul style="width: 50%">
                 <li style="width: 100%">
-                  <a href="/">主页</a>
+                  <a href="/">Home</a>
                 </li>
               </ul>
             </nav>
@@ -94,71 +96,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git/关于hexo推送不了博客到github的问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article class="article article-type-post " itemscope itemprop="blogPost">
               <div class="article-inner">
                 <header class="article-header">
                   <h1 class="article-title" itemprop="name">
-                    关于hexo推送不了博客到github的问题
+                    <!--TODO: title -->
+                    publish spring-boot-web use docker
                   </h1>
-                  <a href="/2017/09/10/git/关于hexo推送不了博客到github的问题/" class="archive-article-date">
-                    <time datetime="2017-09-10T09:25:34.000Z" itemprop="datePublished">
-                      <i class="icon-calendar icon"></i>2017-09-10</time>
+                  <!--TODO: href text datetime -->
+                  <a href="/data/docker/" class="archive-article-date">
+                    <time datetime="2018-05-09T11:05:34.000Z" itemprop="datePublished">
+                      <i class="icon-calendar icon"></i>2018-05-09</time>
                   </a>
                 </header>
                 <div class="article-entry" itemprop="articleBody">
-                  <p>由于最近换了系统，博客环境没了重新搭建了一下环境导致
-                    <code>hexo d</code> 一直报错，花了几个小时的时间调试，结果发现只是网络问题。特此写博客记录！！</p>
+                  <!--TODO: title -->
+                  <p>
+                    publish spring-boot-web use
+                    <code>docker</code>
+                  </p>
                   <a id="more"></a>
-                  <p>知道真相的我简直有点受不了。</p>
-                  <p>先介绍一下背景，
-                    <strong>如果没兴趣看的，可直接跳到下面出错图片查看是否和我报错一样。</strong>
-                  </p>
-                  <p>
-                    <strong>背景</strong>
-                  </p>
-                  <pre><code>  1. 重装了系统
-2. 路由搭了 `ss/ssr`服务
- 3. 使用的 `移动宽带` 
-</code></pre>
-                  <p>重装了系统导致博客环境没了需要重新搭建。路由搭了
-                    <code>ss</code>所以进入
-                    <code>github.com</code>正常（后面把ss关了之后根本进不去）。使用的移动宽带！移动宽带！移动宽带！（强烈怀疑是移动宽带问题）。</p>
-                  <h2 id="错误">
-                    <a href="#错误" class="headerlink" title="错误"></a>错误</h2>
-                  <p>在执行了
-                    <code>hexo clean</code>
-                    <code>hexo g</code> 之后准备使用
-                    <code>hexo d</code>推送到github的时候就发生了错误，一直告诉我ssh有问题。不断的添加删除
-                    <code>github</code>上的ssh公钥发现还是报这个错误。
-                    <strong>且执行
-                      <code>ssh -T git@github.com</code>报错</strong>
-                  </p>
-                  <p>这个时候建议
-                    <strong>把所有fan墙软件关闭</strong>之后，再试试能不能打开
-                    <a href="https://github.com/" target="_blank" rel="external">github</a> 你就会发现很可能
-                    <strong>进不去！！！</strong> 然后你掏出你的手机输入这个网址(断wifi，用数据)，你会发现奇迹的进去了!!!</p>
-                  <h2 id="解决">
-                    <a href="#解决" class="headerlink" title="解决"></a>解决</h2>
-                  <p>
-                    <strong>电脑拔掉网线，手机开启热点，电脑wifi链接，请再试一次
-                      <code>hexo d</code>
-                    </strong>
-                  </p>
-                  <p>你会发现好了！好了！！好了！！！</p>
-                  <p>猝~</p>
+                  <!--TODO: main -->
+                  <p>1、package a spring-boot web</p>
+                  <p>2、copy jar to centos</p>
+                  <p>3、docker build</p>
+                  <p>a. mkdir FOLDER-NAME</p>
+                  <p>b. touch dockerfile</p>
+                  <pre><code>  
+                    # vi dockerfile
+
+                    # base image
+                    FROM openjdk:8
+                    # author
+                    MAINTAINER YOUR-NAME
+                    # app info
+                    LABEL app="APP-NAME" version="0.0.1" by="YOUR-NAME"
+                    # build app name
+                    COPY ./demo-0.0.1-SNAPSHOT.jar DOCKER-APP-NAME.jar
+                    # run app
+                    CMD java -jar DOCKER-APP-NAME.jar
+
+                  </code></pre>
+                  <p>c.build app</p>
+                  <pre><code>
+                    docker build -t BUILD-NAME .
+                  </code></pre>
+                  <p>d.check image</p>
+                  <pre><code>docker images</code></pre>
+                  <p>4、run image</p>
+                  <pre><code>
+                    docker run --name alias-name -p 8080:8080 -d build-name (or image-id)
+                  </code></pre>
+                  <p>5、check logs</p>
+                  <pre><code>
+                    docker logs alias-name (or container-id)
+                  </code></pre>
+                  <!--TODO: main end-->
                 </div>
                 <div class="article-info article-info-index">
                   <div class="article-tag tagcloud">
                     <i class="icon-price-tags icon"></i>
                     <ul class="article-tag-list">
+                      <!--  TODO tag name -->
                       <li class="article-tag-list-item">
                         <a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
                       </li>
                       <li class="article-tag-list-item">
-                        <a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+                        <a href="javascript:void(0)" class="js-tag article-tag-list-link color5">docker</a>
                       </li>
                     </ul>
                   </div>
+                  <!--
                   <div class="share-btn share-icons tooltip-left">
                     <div class="tooltip tooltip-east">
                       <span class="tooltip-item">
@@ -198,6 +206,7 @@
                       </span>
                     </div>
                   </div>
+                  -->
                   <div class="mask js-mask"></div>
                   <div class="clearfix"></div>
                 </div>
@@ -205,7 +214,7 @@
             </article>
             <nav id="article-nav">
               <a href="/" id="article-nav-older" class="article-nav-link-wrap">
-                <div class="article-nav-title">git简教</div>
+                <div class="article-nav-title">go back</div>
                 <i class="icon-circle-right"></i>
               </a>
             </nav>
@@ -231,13 +240,13 @@
       <div class="tools-nav header-menu">
         <ul style="width: 70%">
           <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')">
-            <a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a>
+            <a href="javascript:void(0)" q-class="active:innerArchive">Blog</a>
           </li>
           <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')">
-            <a href="javascript:void(0)" q-class="active:friends">友链</a>
+            <a href="javascript:void(0)" q-class="active:friends">Link</a>
           </li>
           <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')">
-            <a href="javascript:void(0)" q-class="active:aboutme">关于我</a>
+            <a href="javascript:void(0)" q-class="active:aboutme">Me</a>
           </li>
         </ul>
       </div>
@@ -254,51 +263,12 @@
               <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
             </label>
             <ul class="article-tag-list" q-show="showTags">
-
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+                  <a href="javascript:void(0)" class="js-tag color4">docker</a>
               </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-
               <div class="clearfix"></div>
             </ul>
           </div>
@@ -412,8 +382,9 @@
       innerArchive: true,
       showTags: true
     }
-  </script>   
+  </script>
   <script src="/./main.b3331d.js"></script>
-  <script src="/./slider.445162.js"></script> 
+  <script src="/./slider.445162.js"></script>
 </body>
+
 </html>

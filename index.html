@@ -5,7 +5,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>杂记</title>
+  <title>index</title>
   <link rel="icon" href="/favicon.png">
   <link rel="dns-prefetch" href="https://lifefriend.github.io">
   <link rel="stylesheet" type="text/css" href="/./main.b3331d.css">
@@ -30,14 +30,14 @@
           <nav class="header-menu">
             <ul>
               <li>
-                <a href="/">主页</a>
+                <a href="/">Home</a>
               </li>
             </ul>
           </nav>
           <nav class="header-smart-menu">
-            <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-            <a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-            <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+            <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">Blog</a>
+            <a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">Link</a>
+            <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">Me</a>
           </nav>
           <nav class="header-nav">
             <div class="social">
@@ -80,7 +80,7 @@
             <nav class="header-menu js-header-menu">
               <ul style="width: 50%">
                 <li style="width: 100%">
-                  <a href="/">主页</a>
+                  <a href="/">Home</a>
                 </li>
               </ul>
             </nav>
@@ -94,35 +94,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git/关于hexo推送不了博客到github的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article class="article article-type-post  article-index" itemscope itemprop="blogPost">
               <div class="article-inner">
                 <header class="article-header">
                   <h1 itemprop="name">
-                    <a class="article-title" href="/2017/09/10/git/关于hexo推送不了博客到github的问题/">关于hexo推送不了博客到github的问题</a>
+                    <!--  TODO href text-->
+                    <a class="article-title" href="/data/docker/">publish spring-boot-web use docker</a>
                   </h1>
-                  <a href="/2017/09/10/git/关于hexo推送不了博客到github的问题/" class="archive-article-date">
-                    <time datetime="2017-09-10T09:25:34.000Z" itemprop="datePublished">
-                      <i class="icon-calendar icon"></i>2017-09-10</time>
+                  <!--  TODO: href text datetime-->
+                  <a href="/data/docker/" class="archive-article-date">
+                    <time datetime="2018-05-09T11:05:34.000Z" itemprop="datePublished">
+                      <i class="icon-calendar icon"></i>2018-05-09
+                    </time>
                   </a>
                 </header>
                 <div class="article-entry" itemprop="articleBody">
-                  <p>由于最近换了系统，博客环境没了重新搭建了一下环境导致
-                    <code>hexo d</code> 一直报错，花了几个小时的时间调试，结果发现只是网络问题。特此写博客记录！！</p>
+                  <p>
+                    <!--  TODO: title-->
+                    publish spring-boot-web use <code>docker</code> 
+                  </p>
                 </div>
                 <div class="article-info article-info-index">
                   <div class="article-tag tagcloud">
                     <i class="icon-price-tags icon"></i>
                     <ul class="article-tag-list">
+                      <!--  TODO tag name -->
                       <li class="article-tag-list-item">
                         <a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
                       </li>
                       <li class="article-tag-list-item">
-                        <a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+                        <a href="javascript:void(0)" class="js-tag article-tag-list-link color5">docker</a>
                       </li>
                     </ul>
                   </div>
                   <p class="article-more-link">
-                    <a class="article-more-a" href="/2017/09/10/git/关于hexo推送不了博客到github的问题/">展开全文 >></a>
+                    <!--  TODO href -->
+                    <a class="article-more-a" href="/data/docker/">Read More >></a>
                   </p>
                   <div class="clearfix"></div>
                 </div>
@@ -156,13 +163,13 @@
       <div class="tools-nav header-menu">
         <ul style="width: 70%">
           <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')">
-            <a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a>
+            <a href="javascript:void(0)" q-class="active:innerArchive">Blog</a>
           </li>
           <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')">
-            <a href="javascript:void(0)" q-class="active:friends">友链</a>
+            <a href="javascript:void(0)" q-class="active:friends">Link</a>
           </li>
           <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')">
-            <a href="javascript:void(0)" q-class="active:aboutme">关于我</a>
+            <a href="javascript:void(0)" q-class="active:aboutme">Me</a>
           </li>
         </ul>
       </div>
@@ -179,51 +186,12 @@
               <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
             </label>
             <ul class="article-tag-list" q-show="showTags">
-
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+                <a href="javascript:void(0)" class="js-tag color4">docker</a>
               </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">C#</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shell</a>
-              </li>
-
               <div class="clearfix"></div>
             </ul>
           </div>
