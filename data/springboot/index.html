@@ -1,42 +1,54 @@
-<p>本机环境： java JDK8</p>
-<h2>1、下载  spring-tool-suite</h2>
-<pre><code class="language-html">https://spring.io/tools3/sts/legacy
-</code></pre>
-<p><img src="./1.png" alt="1552295132933"></p>
-<h2>2、解压运行</h2>
-<pre><code class="language-shell">sts-bundle\sts-3.9.7.RELEASE\STS.exe
-</code></pre>
-<p><img src="./2.jpg" alt="1552295132933"></p>
-<h2>3、新建工程</h2>
-<p>打开 Dashboard,点击 CREATE SPRING STARTER PROJECT</p>
-<p><img src="./3.jpg" alt="1552295132933"></p>
-<p>进入 New Spring Starter Project,设置项目名称(Name)、项目 maven 坐标(Group、Artifact),点击 Next</p>
-<p><img src="./5.jpg" alt="1552295132933"></p>
-<p>进入 New Spring Starter Project Dependencies,选择项目依赖 jar 包</p>
-<p><img src="./8.jpg" alt="1552295132933"></p>
-<p>点击 Finish,进入项目</p>
-<p><img src="./9.jpg" alt="1552295132933"></p>
-<h2>4、Hello World</h2>
-<p>新建 HelloWorld.java，输入如下代码：</p>
-<pre><code class="language-java">package com.example.demo;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>springboot</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+</head>
+<body>
+    <p>本机环境： java JDK8</p>
+    <h2>1、下载  spring-tool-suite</h2>
+    <pre><code class="language-html">https://spring.io/tools3/sts/legacy
+    </code></pre>
+    <p><img src="./1.png" alt="1552295132933"></p>
+    <h2>2、解压运行</h2>
+    <pre><code class="language-shell">sts-bundle\sts-3.9.7.RELEASE\STS.exe
+    </code></pre>
+    <p><img src="./2.jpg" alt="1552295132933"></p>
+    <h2>3、新建工程</h2>
+    <p>打开 Dashboard,点击 CREATE SPRING STARTER PROJECT</p>
+    <p><img src="./3.jpg" alt="1552295132933"></p>
+    <p>进入 New Spring Starter Project,设置项目名称(Name)、项目 maven 坐标(Group、Artifact),点击 Next</p>
+    <p><img src="./5.jpg" alt="1552295132933"></p>
+    <p>进入 New Spring Starter Project Dependencies,选择项目依赖 jar 包</p>
+    <p><img src="./8.jpg" alt="1552295132933"></p>
+    <p>点击 Finish,进入项目</p>
+    <p><img src="./9.jpg" alt="1552295132933"></p>
+    <h2>4、Hello World</h2>
+    <p>新建 HelloWorld.java，输入如下代码：</p>
+    <pre><code class="language-java">package com.example.demo;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class HelloWorld {
+    @RestController
+    public class HelloWorld {
 
-    @RequestMapping(&quot;/&quot;)
-    public String Hello() {
-        return &quot;Hello World！&quot;;
+        @RequestMapping(&quot;/&quot;)
+        public String Hello() {
+            return &quot;Hello World！&quot;;
+        }
+        
     }
-    
-}
-</code></pre>
-<p><img src="./11.jpg" alt="1552295132933"></p>
-<h2>5、运行</h2>
-<p>选中 DemoApplication.java，右键 Run As -&gt; Spring Boot App
-<img src="./12.jpg" alt="1552295132933"></p>
-<p>浏览器输入：http://localhost:8080/
-<img src="./13.jpg" alt="1552295132933"></p>
-<p>完</p>
+    </code></pre>
+    <p><img src="./11.jpg" alt="1552295132933"></p>
+    <h2>5、运行</h2>
+    <p>选中 DemoApplication.java，右键 Run As -&gt; Spring Boot App
+    <img src="./12.jpg" alt="1552295132933"></p>
+    <p>浏览器输入：http://localhost:8080/
+    <img src="./13.jpg" alt="1552295132933"></p>
+    <p>完</p>
+</body>
+</html>
