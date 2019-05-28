@@ -27,5 +27,17 @@
         "permalink": "https://lifefriend.github.io/tags/springboot/"
       }
     ]
+  },
+  {
+    "title": "maptalks wmts demo",
+    "date": "2019-05-28T09:05:34.000Z",
+    "path": "data/maptalks/",
+    "tags": [
+      {
+        "name": "maptalks",
+        "slug": "maptalks",
+        "permalink": "https://lifefriend.github.io/tags/maptalks/"
+      }
+    ]
   }
 ]
