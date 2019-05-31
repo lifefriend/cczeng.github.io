@@ -31,12 +31,24 @@
   {
     "title": "maptalks wmts demo",
     "date": "2019-05-28T09:05:34.000Z",
-    "path": "data/maptalks/",
+    "path": "data/maptalks/wmts/",
     "tags": [
       {
         "name": "maptalks",
         "slug": "maptalks",
-        "permalink": "https://lifefriend.github.io/tags/maptalks/"
+        "permalink": "https://lifefriend.github.io/tags/maptalks/wmts/"
+      }
+    ]
+  },
+  {
+    "title": "maptalks arcgis demo",
+    "date": "2019-05-31T22:05:34.000Z",
+    "path": "data/maptalks/arcgis/",
+    "tags": [
+      {
+        "name": "maptalks",
+        "slug": "maptalks",
+        "permalink": "https://lifefriend.github.io/tags/maptalks/arcgis/"
       }
     ]
   }
